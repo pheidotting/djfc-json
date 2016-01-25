@@ -12,7 +12,7 @@ import java.util.List;
 import static com.google.common.collect.Iterables.filter;
 import static com.google.common.collect.Iterables.getFirst;
 
-public class JsonRelatie implements ObjectMetJsonAdressen, ObjectMetJsonBijlages, ObjectMetJsonOpmerkingen, ObjectMetJsonTelefoonnummers {
+public class JsonRelatie implements ObjectMetJsonAdressen, ObjectMetJsonBijlages, ObjectMetJsonOpmerkingen, ObjectMetJsonTelefoonnummers,ObjectMetJsonRekeningNummers {
     private Long id;
     private String identificatie;
     private String roepnaam;
