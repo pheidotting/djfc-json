@@ -10,16 +10,9 @@ public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
     private Long id;
     private String tijd;
     private String opmerking;
+    private Long entiteitId;
     private String medewerker;
     private String medewerkerId;
-    private String schade;
-    private String hypotheek;
-    private String polis;
-    private String relatie;
-    private String bedrijf;
-    private String aangifte;
-    private String jaarcijfers;
-    private String risicoAnalyse;
     private String soort;
     private String tekstBackup;
 
@@ -63,68 +56,12 @@ public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
         this.medewerkerId = medewerkerId;
     }
 
-    public String getSchade() {
-        return schade;
+    public Long getEntiteitId() {
+        return entiteitId;
     }
 
-    public void setSchade(String schade) {
-        this.schade = schade;
-    }
-
-    public String getHypotheek() {
-        return hypotheek;
-    }
-
-    public void setHypotheek(String hypotheek) {
-        this.hypotheek = hypotheek;
-    }
-
-    public String getPolis() {
-        return polis;
-    }
-
-    public void setPolis(String polis) {
-        this.polis = polis;
-    }
-
-    public String getRelatie() {
-        return relatie;
-    }
-
-    public void setRelatie(String relatie) {
-        this.relatie = relatie;
-    }
-
-    public String getBedrijf() {
-        return bedrijf;
-    }
-
-    public void setBedrijf(String bedrijf) {
-        this.bedrijf = bedrijf;
-    }
-
-    public String getAangifte() {
-        return aangifte;
-    }
-
-    public void setAangifte(String aangifte) {
-        this.aangifte = aangifte;
-    }
-
-    public String getJaarcijfers() {
-        return jaarcijfers;
-    }
-
-    public void setJaarcijfers(String jaarcijfers) {
-        this.jaarcijfers = jaarcijfers;
-    }
-
-    public String getRisicoAnalyse() {
-        return risicoAnalyse;
-    }
-
-    public void setRisicoAnalyse(String risicoAnalyse) {
-        this.risicoAnalyse = risicoAnalyse;
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
     }
 
     public String getSoort() {

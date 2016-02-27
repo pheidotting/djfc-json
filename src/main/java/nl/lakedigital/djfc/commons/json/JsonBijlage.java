@@ -9,7 +9,7 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
     private String bestandsNaam;
     private String soortBijlage;
     private String url;
-    private String parentId;
+    private Long parentId;
     private String tonen;
     private String omschrijving;
     private String datumUpload;
@@ -48,11 +48,11 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
         this.url = url;
     }
 
-    public String getParentId() {
+    public Long getParentId() {
         return parentId;
     }
 
-    public void setParentId(String parentId) {
+    public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
 
