@@ -14,8 +14,8 @@ public class JsonAdres {
     private String postcode;
     private String plaats;
     private String soortAdres;
-    private String relatie;
-    private String bedrijf;
+    private String soortEntiteit;
+    private Long entiteitId;
 
     public Long getId() {
         return id;
@@ -73,20 +73,20 @@ public class JsonAdres {
         this.soortAdres = soortAdres;
     }
 
-    public String getRelatie() {
-        return relatie;
+    public String getSoortEntiteit() {
+        return soortEntiteit;
     }
 
-    public void setRelatie(String relatie) {
-        this.relatie = relatie;
+    public void setSoortEntiteit(String soortEntiteit) {
+        this.soortEntiteit = soortEntiteit;
     }
 
-    public String getBedrijf() {
-        return bedrijf;
+    public Long getEntiteitId() {
+        return entiteitId;
     }
 
-    public void setBedrijf(String bedrijf) {
-        this.bedrijf = bedrijf;
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
     }
 
     @Override
@@ -101,16 +101,16 @@ public class JsonAdres {
 
         JsonAdres jsonAdres = (JsonAdres) o;
 
-        return new EqualsBuilder().append(getId(), jsonAdres.getId()).append(getStraat(), jsonAdres.getStraat()).append(getHuisnummer(), jsonAdres.getHuisnummer()).append(getToevoeging(), jsonAdres.getToevoeging()).append(getPostcode(), jsonAdres.getPostcode()).append(getPlaats(), jsonAdres.getPlaats()).append(getSoortAdres(), jsonAdres.getSoortAdres()).append(getRelatie(), jsonAdres.getRelatie()).isEquals();
+        return new EqualsBuilder().append(getId(), jsonAdres.getId()).append(getStraat(), jsonAdres.getStraat()).append(getHuisnummer(), jsonAdres.getHuisnummer()).append(getToevoeging(), jsonAdres.getToevoeging()).append(getPostcode(), jsonAdres.getPostcode()).append(getPlaats(), jsonAdres.getPlaats()).append(getSoortAdres(), jsonAdres.getSoortAdres()).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getId()).append(getStraat()).append(getHuisnummer()).append(getToevoeging()).append(getPostcode()).append(getPlaats()).append(getSoortAdres()).append(getRelatie()).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getId()).append(getStraat()).append(getHuisnummer()).append(getToevoeging()).append(getPostcode()).append(getPlaats()).append(getSoortAdres()).toHashCode();
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("straat", straat).append("huisnummer", huisnummer).append("toevoeging", toevoeging).append("postcode", postcode).append("plaats", plaats).append("soortAdres", soortAdres).append("relatie", relatie).toString();
+        return new ToStringBuilder(this).append("id", id).append("straat", straat).append("huisnummer", huisnummer).append("toevoeging", toevoeging).append("postcode", postcode).append("plaats", plaats).append("soortAdres", soortAdres).toString();
     }
 }
