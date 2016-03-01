@@ -14,9 +14,8 @@ public class JsonTelefoonnummer implements Serializable {
     private String soort;
     private String omschrijving;
     private List<String> errors;
-    private String bedrijf;
-    private Long relatie;
-    private Long contactpersoon;
+    private String soortEntiteit;
+    private Long entiteitId;
 
     public JsonTelefoonnummer() {
     }
@@ -69,28 +68,20 @@ public class JsonTelefoonnummer implements Serializable {
         this.errors = errors;
     }
 
-    public String getBedrijf() {
-        return bedrijf;
+    public String getSoortEntiteit() {
+        return soortEntiteit;
     }
 
-    public void setBedrijf(String bedrijf) {
-        this.bedrijf = bedrijf;
+    public void setSoortEntiteit(String soortEntiteit) {
+        this.soortEntiteit = soortEntiteit;
     }
 
-    public Long getRelatie() {
-        return relatie;
+    public Long getEntiteitId() {
+        return entiteitId;
     }
 
-    public void setRelatie(Long relatie) {
-        this.relatie = relatie;
-    }
-
-    public Long getContactpersoon() {
-        return contactpersoon;
-    }
-
-    public void setContactpersoon(Long contactpersoon) {
-        this.contactpersoon = contactpersoon;
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
     }
 
     @Override

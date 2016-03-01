@@ -13,6 +13,8 @@ public class JsonRekeningNummer implements Serializable {
     private String bic;
     private String rekeningnummer;
     private List<String> errors;
+    private String soortEntiteit;
+    private Long entiteitId;
 
     public JsonRekeningNummer() {
     }
@@ -46,6 +48,22 @@ public class JsonRekeningNummer implements Serializable {
 
     public void setRekeningnummer(String rekeningnummer) {
         this.rekeningnummer = rekeningnummer;
+    }
+
+    public String getSoortEntiteit() {
+        return soortEntiteit;
+    }
+
+    public void setSoortEntiteit(String soortEntiteit) {
+        this.soortEntiteit = soortEntiteit;
+    }
+
+    public Long getEntiteitId() {
+        return entiteitId;
+    }
+
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
     }
 
     public void setErrors(List<String> errors) {

@@ -8,16 +8,14 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonRelatie implements ObjectMetJsonTelefoonnummers, ObjectMetJsonRekeningNummers {
+public class JsonRelatie {
     private Long id;
     private String identificatie;
     private String roepnaam;
     private String voornaam;
     private String tussenvoegsel;
     private String achternaam;
-    private List<JsonTelefoonnummer> telefoonnummers;
     private String bsn;
-    private List<JsonRekeningNummer> rekeningnummers;
     private Long kantoor;
     private String geboorteDatum;
     private String geboorteDatumOpgemaakt;
@@ -98,34 +96,12 @@ public class JsonRelatie implements ObjectMetJsonTelefoonnummers, ObjectMetJsonR
         this.achternaam = achternaam;
     }
 
-    public List<JsonTelefoonnummer> getTelefoonnummers() {
-        if (telefoonnummers == null) {
-            telefoonnummers = new ArrayList<JsonTelefoonnummer>();
-        }
-        return telefoonnummers;
-    }
-
-    public void setTelefoonnummers(List<JsonTelefoonnummer> telefoonnummers) {
-        this.telefoonnummers = telefoonnummers;
-    }
-
     public String getBsn() {
         return bsn;
     }
 
     public void setBsn(String bsn) {
         this.bsn = bsn;
-    }
-
-    public List<JsonRekeningNummer> getRekeningnummers() {
-        if (rekeningnummers == null) {
-            rekeningnummers = new ArrayList<JsonRekeningNummer>();
-        }
-        return rekeningnummers;
-    }
-
-    public void setRekeningnummers(List<JsonRekeningNummer> rekeningnummers) {
-        this.rekeningnummers = rekeningnummers;
     }
 
     public Long getKantoor() {
@@ -247,16 +223,16 @@ public class JsonRelatie implements ObjectMetJsonTelefoonnummers, ObjectMetJsonR
 
         JsonRelatie that = (JsonRelatie) o;
 
-        return new EqualsBuilder().append(isZakelijkeKlant(), that.isZakelijkeKlant()).append(getId(), that.getId()).append(getIdentificatie(), that.getIdentificatie()).append(getRoepnaam(), that.getRoepnaam()).append(getVoornaam(), that.getVoornaam()).append(getTussenvoegsel(), that.getTussenvoegsel()).append(getAchternaam(), that.getAchternaam()).append(getTelefoonnummers(), that.getTelefoonnummers()).append(getBsn(), that.getBsn()).append(getRekeningnummers(), that.getRekeningnummers()).append(getKantoor(), that.getKantoor()).append(getGeboorteDatum(), that.getGeboorteDatum()).append(getOverlijdensdatum(), that.getOverlijdensdatum()).append(getGeslacht(), that.getGeslacht()).append(getBurgerlijkeStaat(), that.getBurgerlijkeStaat()).append(getOnderlingeRelaties(), that.getOnderlingeRelaties()).append(getErrors(), that.getErrors()).isEquals();
+        return new EqualsBuilder().append(isZakelijkeKlant(), that.isZakelijkeKlant()).append(getId(), that.getId()).append(getIdentificatie(), that.getIdentificatie()).append(getRoepnaam(), that.getRoepnaam()).append(getVoornaam(), that.getVoornaam()).append(getTussenvoegsel(), that.getTussenvoegsel()).append(getAchternaam(), that.getAchternaam()).append(getBsn(), that.getBsn()).append(getKantoor(), that.getKantoor()).append(getGeboorteDatum(), that.getGeboorteDatum()).append(getOverlijdensdatum(), that.getOverlijdensdatum()).append(getGeslacht(), that.getGeslacht()).append(getBurgerlijkeStaat(), that.getBurgerlijkeStaat()).append(getOnderlingeRelaties(), that.getOnderlingeRelaties()).append(getErrors(), that.getErrors()).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(getId()).append(getIdentificatie()).append(getRoepnaam()).append(getVoornaam()).append(getTussenvoegsel()).append(getAchternaam()).append(getTelefoonnummers()).append(getBsn()).append(getRekeningnummers()).append(getKantoor()).append(getGeboorteDatum()).append(getOverlijdensdatum()).append(getGeslacht()).append(getBurgerlijkeStaat()).append(getOnderlingeRelaties()).append(isZakelijkeKlant()).append(getErrors()).toHashCode();
+        return new HashCodeBuilder(17, 37).append(getId()).append(getIdentificatie()).append(getRoepnaam()).append(getVoornaam()).append(getTussenvoegsel()).append(getAchternaam()).append(getBsn()).append(getKantoor()).append(getGeboorteDatum()).append(getOverlijdensdatum()).append(getGeslacht()).append(getBurgerlijkeStaat()).append(getOnderlingeRelaties()).append(isZakelijkeKlant()).append(getErrors()).toHashCode();
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("identificatie", identificatie).append("roepnaam", roepnaam).append("voornaam", voornaam).append("tussenvoegsel", tussenvoegsel).append("achternaam", achternaam).append("telefoonnummers", telefoonnummers).append("bsn", bsn).append("rekeningnummers", rekeningnummers).append("kantoor", kantoor).append("geboorteDatum", geboorteDatum).append("overlijdensdatum", overlijdensdatum).append("geslacht", geslacht).append("burgerlijkeStaat", burgerlijkeStaat).append("onderlingeRelaties", onderlingeRelaties).append("zakelijkeKlant", zakelijkeKlant).append("errors", errors).toString();
+        return new ToStringBuilder(this).append("id", id).append("identificatie", identificatie).append("roepnaam", roepnaam).append("voornaam", voornaam).append("tussenvoegsel", tussenvoegsel).append("achternaam", achternaam).append("bsn", bsn).append("kantoor", kantoor).append("geboorteDatum", geboorteDatum).append("overlijdensdatum", overlijdensdatum).append("geslacht", geslacht).append("burgerlijkeStaat", burgerlijkeStaat).append("onderlingeRelaties", onderlingeRelaties).append("zakelijkeKlant", zakelijkeKlant).append("errors", errors).toString();
     }
 }
