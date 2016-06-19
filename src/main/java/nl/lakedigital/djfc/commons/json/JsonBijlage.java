@@ -1,26 +1,24 @@
 package nl.lakedigital.djfc.commons.json;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-public class JsonBijlage implements Comparable<JsonBijlage> {
-    private String id;
+public class JsonBijlage {
+    private Long id;
     private String bestandsNaam;
-    private String soortBijlage;
     private String url;
-    private Long parentId;
     private String tonen;
     private String omschrijving;
     private String datumUpload;
     private String omschrijvingOfBestandsNaam;
     private String omschrijvingOfBestandsNaamBackup;
+    private String s3Identificatie;
+    private String soortEntiteit;
+    private Long entiteitId;
 
-    public String getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -32,28 +30,12 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
         this.bestandsNaam = bestandsNaam;
     }
 
-    public String getSoortBijlage() {
-        return soortBijlage;
-    }
-
-    public void setSoortBijlage(String soortBijlage) {
-        this.soortBijlage = soortBijlage;
-    }
-
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
     }
 
     public String getTonen() {
@@ -96,42 +78,27 @@ public class JsonBijlage implements Comparable<JsonBijlage> {
         this.omschrijvingOfBestandsNaamBackup = omschrijvingOfBestandsNaamBackup;
     }
 
-    /**
-     * @see Object#equals(Object)
-     */
-    @Override
-    public boolean equals(Object object) {
-        if (!(object instanceof JsonBijlage)) {
-            return false;
-        }
-        JsonBijlage rhs = (JsonBijlage) object;
-        return new EqualsBuilder().append(this.bestandsNaam, rhs.bestandsNaam).append(this.id, rhs.id).append(this.soortBijlage, rhs.soortBijlage).append(this.url, rhs.url)
-                .append(this.parentId, rhs.parentId).isEquals();
+    public String getS3Identificatie() {
+        return s3Identificatie;
     }
 
-    /**
-     * @see Object#hashCode()
-     */
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder().append(this.bestandsNaam).append(this.id).append(this.soortBijlage).append(this.url).append(this.parentId).toHashCode();
+    public void setS3Identificatie(String s3Identificatie) {
+        this.s3Identificatie = s3Identificatie;
     }
 
-    /**
-     * @see Object#toString()
-     */
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this).append("soortBijlage", this.soortBijlage).append("url", this.url).append("bestandsNaam", this.bestandsNaam).append("id", this.id)
-                .append("parentId", this.parentId).toString();
+    public String getSoortEntiteit() {
+        return soortEntiteit;
     }
 
-    @Override
-    public int compareTo(JsonBijlage o) {
-        if (this.soortBijlage == o.soortBijlage) {
-            return this.bestandsNaam.compareTo(o.bestandsNaam);
-        } else {
-            return 0;
-        }
+    public void setSoortEntiteit(String soortEntiteit) {
+        this.soortEntiteit = soortEntiteit;
+    }
+
+    public Long getEntiteitId() {
+        return entiteitId;
+    }
+
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
     }
 }

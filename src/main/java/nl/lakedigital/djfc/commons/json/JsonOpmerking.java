@@ -1,20 +1,18 @@
 package nl.lakedigital.djfc.commons.json;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-
 import java.io.Serializable;
 
-public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
+public class JsonOpmerking implements Serializable {
     private static final long serialVersionUID = -2035670222129537280L;
 
     private Long id;
     private String tijd;
     private String opmerking;
-    private Long entiteitId;
     private String medewerker;
-    private String medewerkerId;
-    private String soort;
+    private Long medewerkerId;
     private String tekstBackup;
+    private String soortEntiteit;
+    private Long entiteitId;
 
     public Long getId() {
         return id;
@@ -48,28 +46,12 @@ public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
         this.medewerker = medewerker;
     }
 
-    public String getMedewerkerId() {
+    public Long getMedewerkerId() {
         return medewerkerId;
     }
 
-    public void setMedewerkerId(String medewerkerId) {
+    public void setMedewerkerId(Long medewerkerId) {
         this.medewerkerId = medewerkerId;
-    }
-
-    public Long getEntiteitId() {
-        return entiteitId;
-    }
-
-    public void setEntiteitId(Long entiteitId) {
-        this.entiteitId = entiteitId;
-    }
-
-    public String getSoort() {
-        return soort;
-    }
-
-    public void setSoort(String soort) {
-        this.soort = soort;
     }
 
     public String getTekstBackup() {
@@ -80,43 +62,19 @@ public class JsonOpmerking implements Serializable, Comparable<JsonOpmerking> {
         this.tekstBackup = tekstBackup;
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((opmerking == null) ? 0 : opmerking.hashCode());
-        result = prime * result + ((tijd == null) ? 0 : opmerking.hashCode());
-        return result;
+    public String getSoortEntiteit() {
+        return soortEntiteit;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        JsonOpmerking other = (JsonOpmerking) obj;
-        return new EqualsBuilder().append(id, other.id).append(opmerking, other.opmerking).append(tijd, other.tijd).isEquals();
+    public void setSoortEntiteit(String soortEntiteit) {
+        this.soortEntiteit = soortEntiteit;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Opmerking [id=");
-        builder.append(id);
-        builder.append(", tijd=");
-        builder.append(tijd);
-        builder.append(", opmerking=");
-        builder.append(opmerking);
-        builder.append("]");
-        return builder.toString();
+    public Long getEntiteitId() {
+        return entiteitId;
     }
 
-    @Override
-    public int compareTo(JsonOpmerking o) {
-        return tijd.compareTo(o.tijd) * -1;
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
     }
 }
