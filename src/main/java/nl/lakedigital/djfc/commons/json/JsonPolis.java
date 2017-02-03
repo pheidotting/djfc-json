@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkingen {
+public class JsonPolis {
     private Long id;
     private String status;
     private String polisNummer;
@@ -19,22 +19,23 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
     private String betaalfrequentie;
     private String dekking;
     private String verzekerdeZaak;
-    private List<JsonOpmerking> opmerkingen;
+    //    private List<JsonOpmerking> opmerkingen;
     private String maatschappij;
     private String soort;
     private List<JsonBijlage> bijlages;
-    private String bedrijf;
-    private Long bedrijfsId;
+    //    private String bedrijf;
+    //    private Long bedrijfsId;
     private String idDiv;
     private String idDivLink;
     private String className;
     private List<JsonSchade> schades;
-    private String relatie;
+    //    private String relatie;
     private String titel;
     private String omschrijvingVerzekering;
     private List<String> errors;
     private String soortEntiteit;
-    private JsonOpmerkingenModel opmerkingenModel;
+    private Long entiteitId;
+    //    private JsonOpmerkingenModel opmerkingenModel;
     private String readOnly;
     private String notReadOnly;
 
@@ -134,16 +135,16 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         this.verzekerdeZaak = verzekerdeZaak;
     }
 
-    public List<JsonOpmerking> getOpmerkingen() {
-        if (opmerkingen == null) {
-            opmerkingen = new ArrayList<JsonOpmerking>();
-        }
-        return opmerkingen;
-    }
-
-    public void setOpmerkingen(List<JsonOpmerking> opmerkingen) {
-        this.opmerkingen = opmerkingen;
-    }
+    //    public List<JsonOpmerking> getOpmerkingen() {
+    //        if (opmerkingen == null) {
+    //            opmerkingen = new ArrayList<JsonOpmerking>();
+    //        }
+    //        return opmerkingen;
+    //    }
+    //
+    //    public void setOpmerkingen(List<JsonOpmerking> opmerkingen) {
+    //        this.opmerkingen = opmerkingen;
+    //    }
 
     public String getMaatschappij() {
         return maatschappij;
@@ -172,22 +173,22 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         this.bijlages = bijlages;
     }
 
-    public String getBedrijf() {
-        return bedrijf;
-    }
-
-    public void setBedrijf(String bedrijf) {
-        this.bedrijf = bedrijf;
-    }
-
-    public Long getBedrijfsId() {
-        return bedrijfsId;
-    }
-
-    public void setBedrijfsId(Long bedrijfsId) {
-        this.bedrijfsId = bedrijfsId;
-    }
-
+    //    public String getBedrijf() {
+    //        return bedrijf;
+    //    }
+    //
+    //    public void setBedrijf(String bedrijf) {
+    //        this.bedrijf = bedrijf;
+    //    }
+    //
+    //    public Long getBedrijfsId() {
+    //        return bedrijfsId;
+    //    }
+    //
+    //    public void setBedrijfsId(Long bedrijfsId) {
+    //        this.bedrijfsId = bedrijfsId;
+    //    }
+    //
     public List<JsonSchade> getSchades() {
         if (schades == null) {
             schades = new ArrayList<JsonSchade>();
@@ -223,13 +224,13 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         this.className = className;
     }
 
-    public String getRelatie() {
-        return relatie;
-    }
-
-    public void setRelatie(String relatie) {
-        this.relatie = relatie;
-    }
+    //    public String getRelatie() {
+    //        return relatie;
+    //    }
+    //
+    //    public void setRelatie(String relatie) {
+    //        this.relatie = relatie;
+    //    }
 
     public String getTitel() {
         return titel;
@@ -263,16 +264,24 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         this.soortEntiteit = soortEntiteit;
     }
 
-    public JsonOpmerkingenModel getOpmerkingenModel() {
-        if (opmerkingenModel == null) {
-            opmerkingenModel = new JsonOpmerkingenModel();
-        }
-        return opmerkingenModel;
+    public Long getEntiteitId() {
+        return entiteitId;
     }
 
-    public void setOpmerkingenModel(JsonOpmerkingenModel opmerkingenModel) {
-        this.opmerkingenModel = opmerkingenModel;
+    public void setEntiteitId(Long entiteitId) {
+        this.entiteitId = entiteitId;
     }
+
+    //    public JsonOpmerkingenModel getOpmerkingenModel() {
+    //        if (opmerkingenModel == null) {
+    //            opmerkingenModel = new JsonOpmerkingenModel();
+    //        }
+    //        return opmerkingenModel;
+    //    }
+    //
+    //    public void setOpmerkingenModel(JsonOpmerkingenModel opmerkingenModel) {
+    //        this.opmerkingenModel = opmerkingenModel;
+    //    }
 
     public String getReadOnly() {
         return readOnly;
@@ -292,7 +301,7 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(bedrijf).append(betaalfrequentie).append(className).append(id).append(idDiv).append(idDivLink).append(ingangsDatum).append(maatschappij).append(opmerkingen).append(polisNummer).append(premie).append(prolongatieDatum).append(soort).append(wijzigingsDatum).toHashCode();
+        return new HashCodeBuilder().append(betaalfrequentie).append(className).append(id).append(idDiv).append(idDivLink).append(ingangsDatum).append(maatschappij).append(polisNummer).append(premie).append(prolongatieDatum).append(soort).append(wijzigingsDatum).toHashCode();
     }
 
     @Override
@@ -308,7 +317,7 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         }
         JsonPolis other = (JsonPolis) obj;
 
-        return new EqualsBuilder().append(bedrijf, other.bedrijf).append(betaalfrequentie, other.betaalfrequentie).append(className, other.className).append(id, other.id).append(idDiv, other.idDiv).append(idDivLink, other.idDivLink).append(ingangsDatum, other.ingangsDatum).append(maatschappij, other.maatschappij).append(opmerkingen, other.opmerkingen).append(polisNummer, other.polisNummer).append(premie, other.premie).append(prolongatieDatum, other.prolongatieDatum).append(soort, other.soort).append(wijzigingsDatum, other.wijzigingsDatum).isEquals();
+        return new EqualsBuilder().append(betaalfrequentie, other.betaalfrequentie).append(className, other.className).append(id, other.id).append(idDiv, other.idDiv).append(idDivLink, other.idDivLink).append(ingangsDatum, other.ingangsDatum).append(maatschappij, other.maatschappij).append(polisNummer, other.polisNummer).append(premie, other.premie).append(prolongatieDatum, other.prolongatieDatum).append(soort, other.soort).append(wijzigingsDatum, other.wijzigingsDatum).isEquals();
     }
 
     @Override
@@ -321,14 +330,14 @@ public class JsonPolis implements ObjectMetJsonBijlages, ObjectMetJsonOpmerkinge
         builder.append(", wijzigingsDatum=").append(wijzigingsDatum);
         builder.append(", prolongatieDatum=").append(prolongatieDatum);
         builder.append(", betaalfrequentie=").append(betaalfrequentie);
-        builder.append(", opmerkingen=").append(opmerkingen);
+        //        builder.append(", opmerkingen=").append(opmerkingen);
         builder.append(", maatschappij=").append(maatschappij);
         builder.append(", soort=").append(soort);
-        builder.append(", bedrijf=").append(bedrijf);
+        //        builder.append(", bedrijf=").append(bedrijf);
         builder.append(", idDiv=").append(idDiv);
         builder.append(", idDivLink=").append(idDivLink);
         builder.append(", className=").append(className);
-        builder.append(", relatie=").append(relatie);
+        //        builder.append(", relatie=").append(relatie);
         builder.append("]");
         return builder.toString();
     }

@@ -12,7 +12,7 @@ public class JsonBijlage {
     private String s3Identificatie;
     private String soortEntiteit;
     private Long entiteitId;
-
+    private Long groepBijlages;
 
     public Long getId() {
         return id;
@@ -100,5 +100,13 @@ public class JsonBijlage {
 
     public void setEntiteitId(Long entiteitId) {
         this.entiteitId = entiteitId;
+    }
+
+    public Long getGroepBijlages() {
+        return groepBijlages;
+    }
+
+    public void setGroepBijlages(Long groepBijlages) {
+        this.groepBijlages = groepBijlages;
     }
 }
